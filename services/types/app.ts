@@ -7,9 +7,12 @@ interface BaseResponse {
   };
 }
 
-interface Character {
+export interface Favorite {
   id: number;
   name: string;
+}
+
+interface Character extends Favorite {
   status: string;
   species: string;
   type: string;
@@ -28,9 +31,7 @@ interface Character {
   created: string;
 }
 
-interface Episode {
-  id: number;
-  name: string;
+interface Episode extends Favorite {
   air_date: string;
   episode: string;
   characters: string[];
@@ -38,9 +39,7 @@ interface Episode {
   created: string;
 }
 
-interface Location {
-  id: number;
-  name: string;
+interface Location extends Favorite {
   type: string;
   dimension: string;
   residents: string[];

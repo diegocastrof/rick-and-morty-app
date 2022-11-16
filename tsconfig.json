@@ -17,6 +17,7 @@
     "baseUrl": ".",
     "paths": {
       "config/*": ["./config/*"],
+      "context/*": ["./context/*"],
       "resources/*": ["./resources/*"],
       "services/*": ["./services/*"],
       "styles/*": ["./styles/*"]

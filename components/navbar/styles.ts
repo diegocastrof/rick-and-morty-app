@@ -25,7 +25,7 @@ export const LinksContainer = styled.section`
   }
 `;
 
-export const StyledLink = styled.a`
+export const StyledLink = styled.p`
   color: ${theme.colors.main};
   font-size: ${theme.fonts.h3};
   padding: 0 ${theme.spacing.md};

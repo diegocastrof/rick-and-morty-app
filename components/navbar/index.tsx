@@ -13,6 +13,7 @@ import { IoMdMenu } from "react-icons/io";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <Container>
       <Link href="/">
