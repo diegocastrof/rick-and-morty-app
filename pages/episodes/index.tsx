@@ -5,6 +5,8 @@ import {
   Layout,
   ErrorMessage,
   Pagination,
+  Card,
+  ResultsLayout,
 } from "components";
 import { useEffect, useState } from "react";
 import { useApi } from "context/context";
@@ -35,11 +37,11 @@ export default function EpisodesPage() {
         <ErrorMessage errorMessage="Ops, algo salió mal. Por favor inténtelo nuevamente." />
       )}
       {!isLoading && isSuccess && (
-        <ul>
+        <ResultsLayout>
           {episodes.map((episode) => (
-            <li>{episode.name}</li>
+            <Card key={episode.id} name={episode.name} />
           ))}
-        </ul>
+        </ResultsLayout>
       )}
     </Layout>
   );

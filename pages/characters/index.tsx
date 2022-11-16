@@ -5,6 +5,8 @@ import {
   Layout,
   ErrorMessage,
   Pagination,
+  Card,
+  ResultsLayout,
 } from "components";
 import { useEffect, useState } from "react";
 import { useApi } from "context/context";
@@ -35,11 +37,15 @@ export default function CharactersPage() {
         <ErrorMessage errorMessage="Ops, algo salió mal. Por favor inténtelo nuevamente." />
       )}
       {!isLoading && isSuccess && (
-        <ul>
+        <ResultsLayout>
           {characters.map((character) => (
-            <li>{character.name}</li>
+            <Card
+              key={character.id}
+              image={character.image}
+              name={character.name}
+            />
           ))}
-        </ul>
+        </ResultsLayout>
       )}
     </Layout>
   );

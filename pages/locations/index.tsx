@@ -5,6 +5,8 @@ import {
   Layout,
   ErrorMessage,
   Pagination,
+  Card,
+  ResultsLayout,
 } from "components";
 import { useEffect, useState } from "react";
 import { useApi } from "context/context";
@@ -36,11 +38,11 @@ export default function LocationsPage() {
         <ErrorMessage errorMessage="Ops, algo salió mal. Por favor inténtelo nuevamente." />
       )}
       {!isLoading && isSuccess && (
-        <ul>
+        <ResultsLayout>
           {locations.map((location) => (
-            <li>{location.name}</li>
+            <Card key={location.id} name={location.name} />
           ))}
-        </ul>
+        </ResultsLayout>
       )}
     </Layout>
   );
