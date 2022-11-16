@@ -8,6 +8,7 @@ import { ReactQueryDevtools } from "react-query/devtools";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = React.useState(() => new QueryClient());
+
   return (
     <ThemeProvider theme={theme}>
       <QueryClientProvider client={queryClient}>

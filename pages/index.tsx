@@ -1,21 +1,26 @@
-import useGetCharacters from "hooks/useGetCharacters";
-import { useQuery } from "react-query";
-import AppService from "services/appService";
+import { Layout } from "components";
+import Image from "next/image";
+import bgImage from "public/rick-and-morty-bg.jpeg";
+import styled from "styled-components";
 
 export default function Home() {
-  // const getCharacters = async () => {
-  //   const response = await AppService.getCharacters({ name: "Rick " });
-  //   return response.data;
-  // };
-
-  // const { data } = useQuery({
-  //   queryKey: ["characters"],
-  //   queryFn: getCharacters,
-  // });
-
-  // console.log(data);
-  // console.log("first");
-  const { characters } = useGetCharacters({ name: "morty" });
-  console.log(characters);
-  return <div>holi</div>;
+  return (
+    <Layout>
+      <ImageContainer>
+        <Image
+          alt="background-image"
+          src={bgImage}
+          style={{ width: "60%", height: "auto", borderRadius: "25px" }}
+        />
+      </ImageContainer>
+    </Layout>
+  );
 }
+
+const ImageContainer = styled.div`
+  width: 100%;
+  height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
