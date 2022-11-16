@@ -8,6 +8,7 @@ export const Container = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: ${Theme.spacing.lg} 0;
 
   @media ${Theme.mediaQueries.miniDesktop} {
     flex-direction: column;
@@ -16,7 +17,7 @@ export const Container = styled.section`
   }
 `;
 
-export const Title = styled.h3`
+export const Title = styled.h2`
   color: ${Theme.colors.main};
 `;
 

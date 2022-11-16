@@ -1,3 +1,7 @@
+interface BaseArgs {
+  name?: string;
+  page?: number;
+}
 interface BaseResponse {
   info: {
     count: number;
@@ -47,8 +51,7 @@ interface Location extends Favorite {
   created: string;
 }
 
-export interface GetCharactersArgs {
-  name?: string;
+export interface GetCharactersArgs extends BaseArgs {
   status?: "alive" | "dead" | "unknown";
   species?: string;
   type?: string;
@@ -59,8 +62,7 @@ export interface GetCharactersResponse extends BaseResponse {
   results: Character[];
 }
 
-export interface GetLocationsArgs {
-  name?: string;
+export interface GetLocationsArgs extends BaseArgs {
   type?: string;
   dimension?: string;
 }
@@ -69,8 +71,7 @@ export interface GetLocationsResponse extends BaseResponse {
   results: Location[];
 }
 
-export interface GetEpisodesArgs {
-  name?: string;
+export interface GetEpisodesArgs extends BaseArgs {
   episode?: string;
 }
 
