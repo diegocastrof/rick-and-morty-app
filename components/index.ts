@@ -6,3 +6,4 @@ export { default as Navbar } from "./navbar";
 export { default as Pagination } from "./pagination";
 export { default as Card } from "./card";
 export { default as ResultsLayout } from "./resultsLayout";
+export { default as InformationBlock } from "./informationBlock";

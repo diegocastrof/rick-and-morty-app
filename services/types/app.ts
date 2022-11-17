@@ -2,7 +2,7 @@ interface BaseArgs {
   name?: string;
   page?: number;
 }
-interface BaseResponse {
+interface BasePaginatedResponse {
   info: {
     count: number;
     pages: number;
@@ -16,7 +16,7 @@ export interface Favorite {
   name: string;
 }
 
-interface Character extends Favorite {
+export interface Character extends Favorite {
   status: string;
   species: string;
   type: string;
@@ -35,7 +35,7 @@ interface Character extends Favorite {
   created: string;
 }
 
-interface Episode extends Favorite {
+export interface Episode extends Favorite {
   air_date: string;
   episode: string;
   characters: string[];
@@ -43,7 +43,7 @@ interface Episode extends Favorite {
   created: string;
 }
 
-interface Location extends Favorite {
+export interface Location extends Favorite {
   type: string;
   dimension: string;
   residents: string[];
@@ -58,7 +58,9 @@ export interface GetCharactersArgs extends BaseArgs {
   gender?: "female" | "male" | "genderless" | "unknown";
 }
 
-export interface GetCharactersResponse extends BaseResponse {
+export type GetCharacterResponse = Character;
+
+export interface GetCharactersResponse extends BasePaginatedResponse {
   results: Character[];
 }
 
@@ -67,14 +69,18 @@ export interface GetLocationsArgs extends BaseArgs {
   dimension?: string;
 }
 
-export interface GetLocationsResponse extends BaseResponse {
+export type GetLocationResponse = Location;
+
+export interface GetLocationsResponse extends BasePaginatedResponse {
   results: Location[];
 }
+
+export type GetEpisodeResponse = Episode;
 
 export interface GetEpisodesArgs extends BaseArgs {
   episode?: string;
 }
 
-export interface GetEpisodesResponse extends BaseResponse {
+export interface GetEpisodesResponse extends BasePaginatedResponse {
   results: Episode[];
 }

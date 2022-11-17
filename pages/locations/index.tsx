@@ -40,7 +40,11 @@ export default function LocationsPage() {
       {!isLoading && isSuccess && (
         <ResultsLayout>
           {locations.map((location) => (
-            <Card key={location.id} name={location.name} />
+            <Card
+              key={location.id}
+              name={location.name}
+              link={`locations/${location.id}`}
+            />
           ))}
         </ResultsLayout>
       )}

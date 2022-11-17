@@ -39,7 +39,11 @@ export default function EpisodesPage() {
       {!isLoading && isSuccess && (
         <ResultsLayout>
           {episodes.map((episode) => (
-            <Card key={episode.id} name={episode.name} />
+            <Card
+              key={episode.id}
+              name={episode.name}
+              link={`episodes/${episode.id}`}
+            />
           ))}
         </ResultsLayout>
       )}

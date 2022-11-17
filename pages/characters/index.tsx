@@ -43,6 +43,7 @@ export default function CharactersPage() {
               key={character.id}
               image={character.image}
               name={character.name}
+              link={`characters/${character.id}`}
             />
           ))}
         </ResultsLayout>
