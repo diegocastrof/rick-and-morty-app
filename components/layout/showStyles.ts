@@ -3,8 +3,7 @@ import theme from "styles/theme";
 
 export const Layout = styled.section`
   width: 100%;
-  margin-top: ${theme.spacing.xl};
-  padding: 0 5%;
+  padding: ${theme.spacing.xl} 5%;
 
   display: flex;
   flex-direction: column;
@@ -15,6 +14,8 @@ export const Title = styled.h1`
   color: ${theme.colors.main};
   text-align: center;
   margin-bottom: ${theme.spacing.xxl};
+  display: flex;
+  align-items: center;
 `;
 
 export const InformationContainer = styled.section`
@@ -32,6 +33,7 @@ export const ImageContainer = styled.div`
   height: 400px;
   overflow: hidden;
   object-fit: cover;
+  margin-bottom: ${theme.spacing.sm};
 `;
 
 export const Button = styled.button`

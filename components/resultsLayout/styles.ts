@@ -10,4 +10,8 @@ export const Container = styled.section`
   @media ${theme.mediaQueries.tablet} {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  @media ${theme.mediaQueries.mobile} {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;

@@ -11,12 +11,12 @@ interface BasePaginatedResponse {
   };
 }
 
-export interface Favorite {
+interface Item {
   id: number;
   name: string;
 }
 
-export interface Character extends Favorite {
+export interface Character extends Item {
   status: string;
   species: string;
   type: string;
@@ -35,7 +35,7 @@ export interface Character extends Favorite {
   created: string;
 }
 
-export interface Episode extends Favorite {
+export interface Episode extends Item {
   air_date: string;
   episode: string;
   characters: string[];
@@ -43,7 +43,7 @@ export interface Episode extends Favorite {
   created: string;
 }
 
-export interface Location extends Favorite {
+export interface Location extends Item {
   type: string;
   dimension: string;
   residents: string[];

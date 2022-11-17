@@ -10,9 +10,12 @@ import {
   Layout,
   Title,
 } from "components/layout/showStyles";
-import { InformationBlock } from "components";
+import { FavoriteButtons, InformationBlock, Navbar } from "components";
 import NoImage from "public/no-image.png";
 import { useRouter } from "next/router";
+import { Favorite } from "context/types";
+import useFavorite from "hooks/useFavorite";
+import { AiFillHeart } from "react-icons/ai";
 
 interface Props {
   episode: Episode;
@@ -26,12 +29,27 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 const EpisodeShow = ({ episode }: Props) => {
   const router = useRouter();
+  const { findIsFavorite } = useFavorite();
+
+  const favoriteData: Favorite = {
+    id: `episode-${episode.id}`,
+    name: episode.name,
+    link: `episodes/${episode.id}`,
+  };
+
+  const isFavorite = findIsFavorite(favoriteData.id);
+
   return (
     <Layout>
-      <Title>{episode?.name}</Title>
+      <Navbar />
+      <Title>
+        {episode?.name}
+        {isFavorite && <AiFillHeart color="red" />}
+      </Title>
       <ImageContainer>
         <Image alt="placeholder-image" src={NoImage} fill />
       </ImageContainer>
+      <FavoriteButtons isFavorite={isFavorite} favoriteData={favoriteData} />
       <InformationContainer>
         <InformationBlock
           title="Fecha de transmisión"

@@ -68,8 +68,9 @@ export const DrawerContent = styled.section<DrawerContentProps>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100px;
-  max-height: ${(props) => (props.isOpen ? "100px" : "0px")};
+  height: 120px;
+  max-height: ${(props) => (props.isOpen ? "120px" : "0px")};
+  z-index: 99;
   transition: 300ms;
   overflow: hidden;
   background-color: ${(props) => (props.isOpen ? "black" : "transparent")};

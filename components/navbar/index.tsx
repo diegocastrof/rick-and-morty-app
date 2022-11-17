@@ -45,6 +45,9 @@ const LinksItems = () => (
     <Link href="/locations">
       <StyledLink>Locaciones</StyledLink>
     </Link>
+    <Link href="/favorites">
+      <StyledLink>Favoritos</StyledLink>
+    </Link>
   </>
 );
 
